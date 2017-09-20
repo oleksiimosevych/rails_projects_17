@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <h1>Hello there! It is my RUBY course</h1>
+  <h2>Lesson 1</h2>
+  <p>
+    use 'puts' to show some text
+    but inside the app we use special tags < % =
+    <%=  "Some text" %> % >
+    <br> Do you know that this text "<%=  "Some text" %>" is running using embedded ruby? Cool, yeah?
+  </p>
+  <p>
+    Now i want to create a variable. To do it I have to type something in that tags < % =
+     % > and to add space and "=" sign and than value in quotes " ". Like this. Oh. We can use HTML tags for you to understand what we are talking about.
+     <i><%=  "This text is beeing generated using embedded RUBY or .erb" %></i>
+     <br>This text is just structured by HTML.
+    <br><% so = "So, what we can do with ruby?" %>
+    <i><%= so %></i> - text from variable called "so"
+    <br>
+    We can do something with strings, for ex we can make interpolation: to do it we need to write:
+    <br> < % google ="Google" % > < %= google % > And it will give us:
+    <br><% google ="Google" %>
+    <i><%= google %></i>
+    <br> But now we can do  < %= "Hello #{google}" % > And it will give us:
+    <br><i><%= "Hello #{google}" %></i>
+    )OOOPS!rthfjk ghm m  t fhj d 
+    
+  </p>
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.title %></td>
+        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post', new_post_path %>
